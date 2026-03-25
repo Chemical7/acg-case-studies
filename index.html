@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=2.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IFF 2026 Case Study | Africa Communications Media Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════════
    TOKENS
@@ -570,7 +570,7 @@ p strong { color: var(--text-primary); font-weight: 600; }
   text-align: left;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s var(--ease);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .effect-card.visible { opacity: 1; transform: translateY(0); }
@@ -643,7 +643,7 @@ p strong { color: var(--text-primary); font-weight: 600; }
   padding: 0;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s var(--ease);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .broadcast-card.visible { opacity: 1; transform: translateY(0); }
@@ -708,8 +708,6 @@ p strong { color: var(--text-primary); font-weight: 600; }
   width: 0%;
   transition: width 1.2s var(--ease);
 }
-
-.sentiment-item.visible .bar-fill { /* width set via inline style */ }
 
 .sentiment-pill {
   display: inline-block;
@@ -800,7 +798,7 @@ p strong { color: var(--text-primary); font-weight: 600; }
   position: relative;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.6s var(--ease);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .insight-card.visible { opacity: 1; transform: translateY(0); }
@@ -884,7 +882,7 @@ p strong { color: var(--text-primary); font-weight: 600; }
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .cta-btn:hover { background: var(--gold); transform: translateY(-2px); }
@@ -945,17 +943,14 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
     height: 28px;
   }
   .brand-bar .brand-full {
-    display: none !important;
+    display: none;
   }
   .brand-bar .brand-short {
-    position: static !important;
-    transform: none !important;
-    opacity: 1 !important;
+    position: static;
+    transform: none;
+    opacity: 1;
     font-size: 0.7rem;
     color: var(--white);
-  }
-  .brand-bar.compact {
-    padding: 8px 16px;
   }
   .brand-bar.compact img {
     width: 24px;
@@ -1053,7 +1048,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 <div style="margin-top: 96px;" id="challenge">
   <div class="sticky-narrative">
     <div class="sticky-photo">
-      <img src="photos/registration-energy.jpg" alt="IFF 2026 registration">
+      <img src="photos/registration-energy.jpg" alt="IFF 2026 registration" loading="lazy">
       <div class="photo-overlay"></div>
       <div class="photo-caption-float">Delegates arriving at the Kigali Convention Centre</div>
     </div>
@@ -1084,7 +1079,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 <div id="approach">
   <div class="sticky-narrative reverse">
     <div class="sticky-photo">
-      <img src="photos/panel-discussion.jpg" alt="IFF 2026 panel">
+      <img src="photos/panel-discussion.jpg" alt="IFF 2026 panel" loading="lazy">
       <div class="photo-overlay"></div>
       <div class="photo-caption-float">Panel session during IFF 2026</div>
     </div>
@@ -1174,7 +1169,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 <div id="event-effect">
   <div class="sticky-narrative">
     <div class="sticky-photo">
-      <img src="photos/networking-floor.jpg" alt="IFF 2026 networking floor">
+      <img src="photos/networking-floor.jpg" alt="IFF 2026 networking floor" loading="lazy">
       <div class="photo-overlay"></div>
       <div class="photo-caption-float">Exhibition floor during IFF 2026</div>
     </div>
@@ -1201,7 +1196,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
      PHOTO DIVIDER
      ═══════════════════════════════════════════════════════ -->
 <div class="photo-divider">
-  <img src="photos/delegate-hallway.jpg" alt="IFF 2026 delegate" id="parallaxPhoto">
+  <img src="photos/delegate-hallway.jpg" alt="IFF 2026 delegate" id="parallaxPhoto" loading="lazy">
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -1237,7 +1232,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 
   <div class="map-grid">
     <div class="map-wrap">
-      <img src="coverage-map.png" alt="ACG media coverage map across Africa and beyond">
+      <img src="coverage-map.png" alt="ACG media coverage map across Africa and beyond" loading="lazy">
     </div>
     <div class="map-legend">
       <div class="map-region">
@@ -1379,7 +1374,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 </section>
 
 <footer>
-  <img class="footer-logo" src="acg-logo-green.png" alt="ACMG">
+  <img class="footer-logo" src="acg-logo-green.png" alt="ACMG" loading="lazy">
   <div class="wordmark">AFRICA COMMUNICATIONS MEDIA GROUP</div>
   <p>#WeKnowAfrica &middot; Johannesburg &middot; Nairobi &middot; Dakar</p>
 </footer>
@@ -1408,6 +1403,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 
   function updateHero() {
     const rect = heroContainer.getBoundingClientRect();
+    if (rect.bottom < 0) return;
     const scrolled = -rect.top;
     const total = heroContainer.offsetHeight - window.innerHeight;
     const t = Math.max(0, Math.min(1, scrolled / total));
@@ -1529,13 +1525,13 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
   // ── Brand bar shrink ──
   const brandBar = document.getElementById('brandBar');
   const SHRINK_THRESHOLD = 120;
+  let brandCompact = false;
 
   function updateBrandBar() {
-    if (window.scrollY > SHRINK_THRESHOLD) {
-      brandBar.classList.add('compact');
-    } else {
-      brandBar.classList.remove('compact');
-    }
+    const shouldBeCompact = window.scrollY > SHRINK_THRESHOLD;
+    if (shouldBeCompact === brandCompact) return;
+    brandCompact = shouldBeCompact;
+    brandBar.classList.toggle('compact', shouldBeCompact);
   }
 
   // ── Scroll loop ──
