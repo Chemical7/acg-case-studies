@@ -165,6 +165,19 @@ a { color: var(--orange); text-decoration:none; }
   transform: scaleX(-1);
 }
 
+.hero-client-logo {
+  position: absolute;
+  top: 48px;
+  right: clamp(24px, 5vw, 80px);
+  z-index: 1;
+  width: clamp(120px, 15vw, 200px);
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+.hero-client-logo:hover {
+  opacity: 0.6;
+}
+
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -964,6 +977,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
     <div class="hero-bg">
       <img src="photos/keynote-speaker.jpg" alt="IFF 2026 keynote" id="heroBgImg">
     </div>
+    <img class="hero-client-logo" src="iff-logo.png" alt="Inclusive FinTech Forum 2026">
     <div class="hero-content" id="heroContent">
       <div class="label">Case Study</div>
       <h1>283,630 Impressions. 52 Media Placements. <span>3 Days in Kigali.</span></h1>
