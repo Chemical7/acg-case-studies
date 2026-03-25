@@ -63,34 +63,52 @@ a { color: var(--orange); text-decoration:none; }
 /* Chapter nav removed - progress bar is sufficient */
 
 /* ══════════════════════════════════════════════════════
-   TOP NAV BAR
+   BRAND BAR — starts large, shrinks on scroll
    ══════════════════════════════════════════════════════ */
-.top-bar {
+.brand-bar {
   position: fixed;
-  top: 3px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  padding: 12px clamp(24px, 5vw, 80px);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+  padding: 48px clamp(24px, 5vw, 80px);
+  transition: padding 0.5s var(--ease), background 0.5s var(--ease), gap 0.4s var(--ease);
   pointer-events: none;
 }
-.top-bar img {
-  width: 36px;
-  height: 36px;
+.brand-bar.compact {
+  padding: 10px clamp(24px, 5vw, 80px);
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  gap: 10px;
+}
+.brand-bar img {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   pointer-events: auto;
+  transition: width 0.5s var(--ease), height 0.5s var(--ease);
 }
-.top-bar .brand-name {
+.brand-bar.compact img {
+  width: 28px;
+  height: 28px;
+}
+.brand-bar .brand-name {
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-secondary);
-  opacity: 0.8;
+  color: var(--white);
+  opacity: 1;
+  transition: font-size 0.5s var(--ease), opacity 0.5s var(--ease);
+}
+.brand-bar.compact .brand-name {
+  font-size: 0.65rem;
+  opacity: 0.7;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -908,7 +926,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 <!-- Progress bar -->
 <div id="progress"></div>
 
-<div class="top-bar">
+<div class="brand-bar" id="brandBar">
   <img src="acg-logo-orange.png" alt="ACMG">
   <span class="brand-name">Africa Communications Media Group</span>
 </div>
@@ -1484,6 +1502,18 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
     row.style.transitionDelay = (i * 0.06) + 's';
   });
 
+  // ── Brand bar shrink ──
+  const brandBar = document.getElementById('brandBar');
+  const SHRINK_THRESHOLD = 120;
+
+  function updateBrandBar() {
+    if (window.scrollY > SHRINK_THRESHOLD) {
+      brandBar.classList.add('compact');
+    } else {
+      brandBar.classList.remove('compact');
+    }
+  }
+
   // ── Scroll loop ──
   let ticking = false;
 
@@ -1494,6 +1524,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
         updateHero();
         updateParallax();
         animateCounters();
+        updateBrandBar();
         ticking = false;
       });
       ticking = true;
