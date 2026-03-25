@@ -934,37 +934,41 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
    ══════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
   .brand-bar {
-    padding: 10px 16px;
+    padding: 8px 16px;
     gap: 8px;
+    background: rgba(10,10,15,0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .brand-bar img {
     width: 28px;
     height: 28px;
   }
   .brand-bar .brand-full {
-    display: none;
+    display: none !important;
   }
   .brand-bar .brand-short {
-    position: static;
-    transform: none;
-    opacity: 0.7;
-    font-size: 0.65rem;
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    font-size: 0.7rem;
+    color: var(--white);
   }
   .brand-bar.compact {
     padding: 8px 16px;
   }
   .brand-bar.compact img {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
   .hero-client-logo {
     display: none;
   }
   .hero {
-    align-items: center;
+    padding-top: 52px;
   }
   .hero-content {
-    padding: 60px 16px 40px;
+    padding: 0 16px 40px;
   }
 }
 
