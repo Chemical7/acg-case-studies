@@ -934,26 +934,31 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
    ══════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
   .brand-bar {
-    padding: 24px 16px;
-    gap: 10px;
+    padding: 10px 16px;
+    gap: 8px;
   }
   .brand-bar img {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
   .brand-bar .brand-full {
+    display: none;
+  }
+  .brand-bar .brand-short {
+    position: static;
+    transform: none;
+    opacity: 0.7;
     font-size: 0.65rem;
   }
   .brand-bar.compact {
     padding: 8px 16px;
   }
   .brand-bar.compact img {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
   .hero-client-logo {
-    top: 24px;
-    width: 90px;
+    display: none;
   }
 }
 
