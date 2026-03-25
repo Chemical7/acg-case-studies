@@ -63,6 +63,37 @@ a { color: var(--orange); text-decoration:none; }
 /* Chapter nav removed - progress bar is sufficient */
 
 /* ══════════════════════════════════════════════════════
+   TOP NAV BAR
+   ══════════════════════════════════════════════════════ */
+.top-bar {
+  position: fixed;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 12px clamp(24px, 5vw, 80px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+.top-bar img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+.top-bar .brand-name {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+/* ══════════════════════════════════════════════════════
    HERO - FULL VIEWPORT STICKY
    ══════════════════════════════════════════════════════ */
 .hero-container {
@@ -819,6 +850,16 @@ footer {
   padding: 40px 24px;
   border-top: 1px solid var(--border);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+footer .footer-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 footer .wordmark {
@@ -827,7 +868,7 @@ footer .wordmark {
   font-size: 0.85rem;
   color: var(--text-secondary);
   letter-spacing: 0.05em;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
 footer p { font-size: 0.72rem; color: var(--text-dim); }
@@ -867,6 +908,10 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 <!-- Progress bar -->
 <div id="progress"></div>
 
+<div class="top-bar">
+  <img src="acg-logo-orange.png" alt="ACMG">
+  <span class="brand-name">Africa Communications Media Group</span>
+</div>
 
 <!-- ═══════════════════════════════════════════════════════
      HERO (sticky, parallax on scroll)
@@ -1292,6 +1337,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 </section>
 
 <footer>
+  <img class="footer-logo" src="acg-logo-green.png" alt="ACMG">
   <div class="wordmark">AFRICA COMMUNICATIONS MEDIA GROUP</div>
   <p>#WeKnowAfrica &middot; Johannesburg &middot; Nairobi &middot; Dakar</p>
 </footer>
