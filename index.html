@@ -98,17 +98,38 @@ a { color: var(--orange); text-decoration:none; }
 }
 .brand-bar .brand-name {
   font-family: var(--font-display);
-  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--white);
-  opacity: 1;
-  transition: font-size 0.5s var(--ease), opacity 0.5s var(--ease);
+  position: relative;
+  white-space: nowrap;
 }
-.brand-bar.compact .brand-name {
-  font-size: 0.65rem;
-  opacity: 0.7;
+.brand-bar .brand-full,
+.brand-bar .brand-short {
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.brand-bar .brand-full {
+  font-size: 1rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+.brand-bar .brand-short {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  opacity: 0;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+}
+.brand-bar.compact .brand-full {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+.brand-bar.compact .brand-short {
+  opacity: 1;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -928,7 +949,10 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 
 <div class="brand-bar" id="brandBar">
   <img src="acg-logo-orange.png" alt="ACMG">
-  <span class="brand-name">Africa Communications Media Group</span>
+  <span class="brand-name">
+    <span class="brand-full">Africa Communications Media Group</span>
+    <span class="brand-short">ACG</span>
+  </span>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
