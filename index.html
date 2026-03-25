@@ -162,6 +162,7 @@ a { color: var(--orange); text-decoration:none; }
   object-fit: cover;
   will-change: transform, opacity;
   transition: none;
+  transform: scaleX(-1);
 }
 
 .hero-bg::after {
@@ -1413,7 +1414,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
     const t = Math.max(0, Math.min(1, scrolled / total));
 
     // Parallax on background image
-    heroBgImg.style.transform = `scale(${1 + t * 0.15}) translateY(${t * -30}px)`;
+    heroBgImg.style.transform = `scaleX(-1) scale(${1 + t * 0.15}) translateY(${t * -30}px)`;
     heroBgImg.style.opacity = 1 - t * 0.6;
 
     // Fade + slide hero content
