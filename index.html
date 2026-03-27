@@ -250,9 +250,12 @@ a { color: var(--orange); text-decoration:none; }
 
 .hero-meta strong {
   display: block;
-  color: var(--text-primary);
+  color: var(--orange);
   font-weight: 600;
   margin-bottom: 2px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 @keyframes fadeUp {
@@ -267,8 +270,10 @@ a { color: var(--orange); text-decoration:none; }
   justify-content: center;
   gap: clamp(40px, 6vw, 96px);
   max-width: 1120px;
-  margin: -40px auto 0;
+  margin: -120px auto 0;
   padding: 56px 24px 64px;
+  position: relative;
+  z-index: 3;
   position: relative;
   z-index: 10;
 }
@@ -360,7 +365,7 @@ a { color: var(--orange); text-decoration:none; }
   margin-top: -100vh;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 48px;
   /* Soft dark scrim behind text */
   background: linear-gradient(
     to right,
@@ -430,7 +435,7 @@ h3 {
 
 p { color: var(--text-secondary); font-size: 0.95rem; }
 p + p { margin-top: 14px; }
-p strong { color: var(--text-primary); font-weight: 600; }
+p strong { color: var(--orange); font-weight: 600; }
 
 /* ══════════════════════════════════════════════════════
    PULL QUOTE (full width)
@@ -971,7 +976,7 @@ footer p { font-size: 0.72rem; color: var(--text-dim); }
 @media (max-width: 900px) {
   .sticky-photo { height: 50vh; }
   .sticky-photo img { opacity: 0.3; }
-  .scroll-text { margin-top: -50vh; padding: 20vh 24px 12vh; gap: 48px; max-width: 100%; }
+  .scroll-text { margin-top: -50vh; padding: 20vh 24px 12vh; gap: 36px; max-width: 100%; }
   .platform-grid, .insight-grid { grid-template-columns: 1fr; }
   .platform-grid { gap: 0; }
   .platform-card { border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 24px; }
